@@ -18,7 +18,6 @@ var readyToGun = imagePack(8, "ready-to-gun", undefined, undefined, player);
 var gunning = imagePack(4, "gunning", undefined, undefined, player);
 var gun2 = imagePack(14, "gun2", undefined, undefined, player);
 var wiredBird = imagePack(4, "wired-bird", w * 0.33, h * 0.66 + 20, enemy);
-console.log(wiredBird.up())
 var explosion = imagePack(24, "explosion", enemy);
 var bg = new Image();
 bg.src = "./spirites/bg.png";
