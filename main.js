@@ -57,23 +57,23 @@ function Floor(meter, x0, y0){
     floor.src = './spirites/floor/floor.png';
     var finishFloor = new Image();
     finishFloor.src = './spirites/floor/finish.png';
-    ctx.drawImage(startFloor, x0, y0);
-    var t = x0 + startFloor.width;
+    var t = x0;
+    ctx.drawImage(startFloor, t, y0);
+    t += startFloor.width;
     for(var i = 0; i < meter; i++){
-        t += i * floor.width;
         ctx.drawImage(floor, t, y0);
+        t += floor.width;
     }
-    t += meter * floor.width;
     ctx.drawImage(finishFloor, t, y0);
+    t += floor.width;
 }
 var x0 = stand.x;
 var y0 = stand.y + heightPlayer;
 function animate(){
     ctx.clearRect(0, 0, w, h);
     ctx.drawImage(bg, 0, 0, bg.width, bg.height);
-    //ctx.drawImage(bg, 0, 0, bg.width, bg.height);
-    Floor(5, x0, y0 + heightPlayer);
-    Floor(15, x0 + 500, y0 + heightPlayer);
+    Floor(5, x0, y0);
+    Floor(15, x0 + 500, y0);
     switch(player.set){
         case "stand":
             movePlayer = stand.animate[(frame % stand.duration) + 1];
